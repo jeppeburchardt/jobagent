@@ -1,0 +1,23 @@
+{
+	"parsers": [
+		{
+			"name": "prodata",
+			"url": "./fixtures/prodata.html"
+		}
+	],
+	"db": {
+		"file": "database.sqlite"
+	},
+	"log": "./logs"
+	// "mail": {
+	// 	"transport": {
+	// 		"service": "Gmail",
+	// 		"auth": {
+	// 			"user": "jeppeburchardt@gmail.com",
+	// 			"pass": "..."
+	// 		}
+	// 	},
+	// 	"to": "Jeppe Burchardt <jeppe@burchardt.com>",
+	// 	"from": "Job Agent <jobagent@kosmobot.dk>"
+	// }
+}
