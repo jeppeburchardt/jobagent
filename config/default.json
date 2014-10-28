@@ -8,16 +8,16 @@
 	"db": {
 		"file": "database.sqlite"
 	},
-	"log": "./logs"
-	// "mail": {
-	// 	"transport": {
-	// 		"service": "Gmail",
-	// 		"auth": {
-	// 			"user": "jeppeburchardt@gmail.com",
-	// 			"pass": "..."
-	// 		}
-	// 	},
-	// 	"to": "Jeppe Burchardt <jeppe@burchardt.com>",
-	// 	"from": "Job Agent <jobagent@kosmobot.dk>"
-	// }
+	"log": "./logs",
+	"mail": {
+		"transport": {
+			"host": "smtp.domain.com",
+			"auth": {
+				"user": "user",
+				"pass": "pass"
+			}
+		},
+		"to": "to@you.com",
+		"from": "from@me.com"
+	}
 }
