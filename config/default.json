@@ -1,8 +1,8 @@
 {
 	"parsers": [
 		{
-			"name": "prodata",
-			"url": "./fixtures/prodata.html"
+			"name": "sevenn",
+			"url": "./fixtures/sevenn.html" // http://www.linkedin.com/company/mind4it_235985?trk=tyah
 		}
 	],
 	"db": {
