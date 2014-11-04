@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="jobAgentApp">
+	<head>
+		<title>JobAgent</title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<script src="/javascripts/lib/angular-1.2.26.js"></script>
+		<script src="/javascripts/controllers.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+	</head>
+	<body ng-controller="SettingsCtrl">
+		<div class="lines">
+			<h1>Kosmobot's job@gent</h1>
+			<div class="content">
+			<hr>
+				<aside>
+					<!--div class="search">
+						<input type="text" ng-model="query" />
+					</div-->
+					<div class="important">
+						<label for="important-words">Important words</label>
+						<textarea ng-model="important" id="important-words" ng-change="changeTags()"></textarea>
+					</div>
+					<div class="spam">
+						<label for="spam-words">Spam words</label>
+						<textarea ng-model="spam" id="spam-words" ng-change="changeTags()"></textarea>
+					</div>
+					<div>
+						<button ng-class="{dirty: dirty}">Save changes</button>
+					</div>
+					<div class="options">
+						<label>
+							<input type="radio" ng-model="show" value="show-all">
+							<span>Show all</span>
+						</label>
+						<label>
+							<input type="radio" ng-model="show" value="show-important">
+							<span>Show only important</span>
+						</label>
+						<label>
+							<input type="radio" ng-model="show" value="show-spam">
+							<span>Show only spam</span>
+						</label>
+					</div>
+				</aside>
+				<section>
+					<ul ng-class="show">
+						<li ng-repeat="job in jobs | filter:query" ng-class="job.cssClass">
+							<p>
+								<span class="title"><a href="{{job.link}}">{{job.title}}</a></span>
+							</p>
+						</li>
+					</ul>
+				</section>
+				<hr>
+			</div>
+			
+		</div>
+	</body>
+</html>
+
