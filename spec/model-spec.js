@@ -3,7 +3,40 @@ var Model = require('../lib/model');
 
 describe('Model', function () {
 
-	it('Should emit event when a new entry is added', function (done) {
+	it('should add entry', function (done) {
+
+		var m = new Model();
+
+		m.addEntry({
+			title:'TEST',
+			link:'LOL'
+		}).done(function (r) {
+			expect(r.title).toBe('TEST');
+			expect(r.link).toBe('LOL');
+			expect(r.hash).toBe('aee4bd941f8b4d9e39210c06c44fcb71');
+			done();
+		});
+
+	});
+
+	it('should only add unique entries', function (done) {
+		var m = new Model();
+
+		m.addEntry({
+			link:'LOL'
+		}).then(function (r) {
+			expect(r.link).toBe('LOL');
+
+			m.addEntry({
+				link:'LOL'
+			}).then(function (r2) {
+				expect(r2).toBe(null);
+				done();
+			});
+		});
+	});
+
+	xit('Should emit event when a new entry is added', function (done) {
 
 		var m = new Model();
 		m.on('entry', function (entry) {
@@ -18,7 +51,7 @@ describe('Model', function () {
 
 	});
 
-	it('Should only emit the same URL once', function (done) {
+	xit('Should only emit the same URL once', function (done) {
 
 		var m = new Model();
 		var count = 0;

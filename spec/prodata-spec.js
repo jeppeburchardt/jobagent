@@ -14,14 +14,11 @@ describe('Prodata parser', function () {
 
 		var fixture = './fixtures/prodata.html';
 		var p = new Prodata(fixture);
-		
-		p.once('entry', function (entry) {
-			expect(entry.link).toBe('http://www.konsulenter.dk/opgave/3638/Ms-Dynamics-Ax-2009-forretningskonsulenter/');
-			expect(entry.title).toBe('Ms Dynamics Ax 2009 forretningskonsulenter');
+
+		p.parse().then(function (result) {
+			expect(result.length).toBe(28);
 			done();
 		});
-
-		p.parse();
 
 	});
 
